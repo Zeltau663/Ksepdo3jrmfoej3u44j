@@ -12,7 +12,10 @@ local OrionLib = {
 	Flags = {},
 	Themes = {
 		Default = {
-			Main = Color3.fromRGB(33, 3, 3), -- Fundo preto
+    Main = {
+        Color = Color3.fromRGB(0, 0, 0), -- Fundo preto
+        Transparency = 0.5 -- Transparência (0 = opaco, 1 = invisível)
+    },
             Second = Color3.fromRGB(0, 0, 0), -- Segundo plano em cinza escuro
             Stroke = Color3.fromRGB(255, 0, 0), -- Borda azul brilhante
             Divider = Color3.fromRGB(255, 0, 0), -- Divisor em cinza escuro
