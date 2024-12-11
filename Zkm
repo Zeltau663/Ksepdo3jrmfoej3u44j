@@ -95,6 +95,19 @@ task.spawn(function()
 	end
 end)
 
+ -- Coloquei uma imagem do sonic, mas tu pode alterar desde que tenha o "rbxassetid" da imagem que tu quer, também especifiquei o que cada atributo faz.
+
+local BackgroundImage = Instance.new("ImageLabel")
+BackgroundImage.Size = UDim2.new(1, 0, 1, 0) -- Tamanho preenchendo a tela
+BackgroundImage.Position = UDim2.new(0, 0, 0, 0) -- Posição inicial (canto superior esquerdo)
+BackgroundImage.Image = "rbxassetid://7300172204" -- AssetID da imagem
+BackgroundImage.ImageTransparency = 0 -- Transparência da imagem (0 = visível)
+BackgroundImage.BackgroundTransparency = 1 -- Remove a cor de fundo do ImageLabel
+BackgroundImage.ZIndex = 0 -- Garante que a imagem fique atrás de todos os elementos
+BackgroundImage.Parent = Orion -- Define como filho do ScreenGui principal
+
+Orion.ZIndexBehavior = Enum.ZIndexBehavior.Sibling -- Mantém a hierarquia de renderização
+
 local function MakeDraggable(DragPoint, Main)
 	pcall(function()
 		local Dragging, DragInput, MousePos, FramePos = false
