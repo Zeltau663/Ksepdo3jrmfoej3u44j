@@ -13,10 +13,10 @@ local OrionLib = {
 	Themes = {
 		Default = {
             Main = Color3.fromRGB(26, 26, 26), -- Fundo preto
-            Second = Color3.fromRGB(26, 26, 26), -- Segundo plano em cinza escuro
+            Second = Color3.fromRGB(23, 41, 19), -- Segundo plano em cinza escuro
             Stroke = Color3.fromRGB(8, 255, 8), -- Borda azul brilhante
             Divider = Color3.fromRGB(8, 255, 8), -- Divisor em cinza escuro
-            Text = Color3.fromRGB(8, 255, 8), -- Texto azul brilhante 
+            Text = Color3.fromRGB(255, 255, 255), -- Texto azul brilhante 
             TextDark = Color3.fromRGB(150, 150, 150) -- Texto secundário cinza
 		}
 	},
