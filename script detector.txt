@@ -1,0 +1,49 @@
+-- Função para criar ESP
+function CreateESP(player)
+    local highlight = Instance.new("Highlight")
+    highlight.Parent = player.Character or player.CharacterAdded:Wait()
+    highlight.FillColor = Color3.new(1, 0, 0)
+    highlight.FillTransparency = 0.5
+    highlight.OutlineTransparency = 0.1
+    return highlight
+end
+
+-- Detectar atividades suspeitas (fictício)
+function CheckForScripts(player)
+    local chance = math.random(0, 100) -- Simulação de porcentagem
+    if chance > 50 then
+        return true, chance
+    else
+        return false, chance
+    end
+end
+
+-- Adicionar ESP para todos os jogadores
+game.Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+        local isScripter, chance = CheckForScripts(player)
+        local esp = CreateESP(player)
+
+        if isScripter then
+            esp.FillColor = Color3.new(0, 1, 0) -- Verde para "suspeito"
+            print(player.Name .. " pode ser um scripter. Chance: " .. chance .. "%")
+        else
+            print(player.Name .. " parece normal. Chance: " .. chance .. "%")
+        end
+    end)
+end)
+
+-- Adicionar ESP para jogadores atuais
+for _, player in ipairs(game.Players:GetPlayers()) do
+    if player.Character then
+        local isScripter, chance = CheckForScripts(player)
+        local esp = CreateESP(player)
+
+        if isScripter then
+            esp.FillColor = Color3.new(0, 1, 0) -- Verde para "suspeito"
+            print(player.Name .. " pode ser um scripter. Chance: " .. chance .. "%")
+        else
+            print(player.Name .. " parece normal. Chance: " .. chance .. "%")
+        end
+    end
+end
