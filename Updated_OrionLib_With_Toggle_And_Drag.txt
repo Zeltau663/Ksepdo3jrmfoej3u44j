@@ -7,6 +7,18 @@ local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
 
+-- Adiciona o texto "by zeltau" ao lado do título
+local ByZeltauLabel = Instance.new("TextLabel")
+ByZeltauLabel.Name = "ByZeltauLabel"
+ByZeltauLabel.Text = "by zeltau"
+ByZeltauLabel.Size = UDim2.new(0, 100, 0, 20)
+ByZeltauLabel.Position = UDim2.new(0, 220, 0, 15) -- Ajuste para alinhar ao lado do título
+ByZeltauLabel.BackgroundTransparency = 1
+ByZeltauLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- Verde
+ByZeltauLabel.TextSize = 14
+ByZeltauLabel.Font = Enum.Font.GothamBold
+ByZeltauLabel.Parent = MainWindow.TopBar
+
 local OrionLib = {
 	Elements = {},
 	ThemeObjects = {},
